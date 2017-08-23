@@ -1,0 +1,347 @@
+// Edit Scene Canvas Dialog
+#divEditSceneCanvasDialog {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
+    #divEditSceneTop {
+        background-color: $colorGrayDark;
+        height: 30px;
+        width: 100%;
+
+        label {
+            color: $colorNeonPink;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: top;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        #divCloseButton {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            height: 30px;
+            width: 30px;
+            background-size: 17px 17px;
+            background-image: url(../res/svg/icon_close_hover.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #divSaveButton {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            background-size: 20px 20px;
+            background-image: url(../res/svg/icon_save_hover.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+    }
+
+
+    // Main content
+    #divEditSceneContent {
+        position: relative;
+        background-color: $colorGrayDark2;
+
+        // Canvas
+        #divCanvas {
+            height: 100%;
+            outline: none;
+            box-sizing: content-box;
+            background-color: white;
+        }
+
+    }
+
+
+
+    // Bottom Menu
+    #divEditSceneBottom {
+        background-color: $colorGrayDark;
+        height: 50px;
+        width: 100%;
+
+
+        // Controls
+        #divCanvasControls {
+            position: relative;
+            overflow-x: scroll;
+            white-space: nowrap;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-top: 3px;
+            padding-left: 10px;
+
+
+            > div[class^="divCanvasButton"] {
+                display: inline-block;
+                cursor: pointer;
+                width: 35px;
+                height: 35px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 20px 20px;
+                border: 1px solid $colorNeonPink;
+                border-radius: 2px;
+                margin: 0 2px;
+
+                &:active {
+                    transform: scale(0.9, 0.9);
+                }
+            }
+
+            // select
+            .selectPathThickness {
+                width: 50px;
+                border: 1px solid $colorNeonPink;
+                padding: 0;
+                height: 35px;
+                line-height: 35px;
+                vertical-align: top;
+                cursor: pointer;
+                margin: 0 2px;
+            }
+
+            // color picker replacement element
+            > div:first-of-type {
+                padding: 0;
+                height: 35px;
+                width: 40px;
+                border-radius: 2px;
+                background-color: white;
+                vertical-align: top;
+                margin: 0 2px;
+                border: 1px solid $colorNeonPink;
+            }
+
+
+            // buttons
+            .divCanvasButtonDelete {
+                background-image: url(../res/svg/icon_close_hover.svg);
+            }
+
+            .divCanvasButtonSelect {
+                background-image: url(../res/svg/icon_select_hover.svg);
+            }
+
+            .divCanvasButtonSketch {
+                background-image: url(../res/svg/icon_edit_hover.svg);
+            }
+
+            .divCanvasButtonText {
+                background-image: url(../res/svg/icon_text_t_hover.svg);
+            }
+
+            .divCanvasButtonPicture {
+                background-image: url(../res/svg/icon_image_hover.svg);
+            }
+
+            .divCanvasButtonCircle {
+                background-image: url(../res/svg/icon_circle_hover.svg);
+            }
+
+            .divCanvasButtonTriangle {
+                background-image: url(../res/svg/icon_triangle_hover.svg);
+            }
+
+            .divCanvasButtonRectangle {
+                background-image: url(../res/svg/icon_rect_hover.svg);
+            }
+
+            .divCanvasButtonStar {
+                background-image: url(../res/svg/icon_star_hover.svg);
+            }
+
+            .divCanvasButtonUndo {
+                background-image: url(../res/svg/icon_undo_hover.svg);
+            }
+
+            .divCanvasButtonRedo {
+                background-image: url(../res/svg/icon_redo_hover.svg);
+            }
+
+            .divCanvasButtonMoveBottom {
+                background-image: url(../res/svg/icon_move_bottom_hover.svg);
+            }
+
+            .divCanvasButtonMoveDown {
+                background-image: url(../res/svg/icon_move_down_hover.svg);
+            }
+
+            .divCanvasButtonMoveUp {
+                background-image: url(../res/svg/icon_move_up_hover.svg);
+            }
+
+            .divCanvasButtonMoveTop {
+                background-image: url(../res/svg/icon_move_top_hover.svg);
+            }
+
+            .divCanvasButtonClear {
+                margin-right: 10px !important;
+                background-image: url(../res/svg/icon_delete_hover.svg);
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+// Edit Scene Text Dialog
+#divEditSceneTextDialog {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
+    #divEditSceneTop {
+        background-color: $colorGrayDark;
+        height: 30px;
+        width: 100%;
+
+        label {
+            color: $colorNeonPink;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: top;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        #divCloseButton {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            height: 30px;
+            width: 30px;
+            background-size: 17px 17px;
+            background-image: url(../res/svg/icon_close_hover.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #divSaveButton {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            background-size: 20px 20px;
+            background-image: url(../res/svg/icon_save_hover.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+    }
+
+
+    // Main content
+    #divEditSceneContent {
+        background-color: black;
+        position: relative;
+        background-color: white;
+
+        // Text
+        #divText {
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            display: table;
+            height: 100%;
+            width: 100%;
+
+            // container because table-cell messes with overflow, use child div
+            #divTextContainer {
+                display: table-cell;
+                vertical-align: middle;
+                height: 100%;
+                width: 100%;
+
+                * {
+                    color: $colorGrayMedium2;
+                }
+
+                // content editable text area
+                #divActualText {
+                    padding: 10px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    h1, h2, p {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        word-wrap: break-word;
+                    }
+
+                    ul, ol {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+    // Bottom Menu
+    #divEditSceneBottom {
+        background-color: $colorGrayDark;
+        height: 50px;
+        width: 100%;
+
+        // Text controls
+        #divTextControls {
+            display: inline-block;
+            height: 100%;
+
+            #divEditorTop {
+                display: inline-block;
+
+                .cke_divActualText {
+                    border: none;
+                }
+
+                .cke_top {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .cke_toolgroup {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                .cke_combo_button {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                .cke_button__justifyblock {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+

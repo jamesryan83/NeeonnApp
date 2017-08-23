@@ -1,0 +1,42 @@
+<!-- Create storyboard dialog -->
+<div id="divDialogCreateStoryboard" class="center">
+
+    <h2>Create Storyboard</h2>
+
+    <div id="divTitle" class="divLabelInput">
+        <div><label>Title</label></div>
+        <input id="inputTitle" type="text" />
+    </div>
+
+    <div id="divCategory" class="divLabelInput">
+        <div><label>Category</label></div>
+        <select id="selectCategory" type="text"></select>
+    </div>
+
+    <div id="divFirstScene" class="divLabelInput">
+        <div><label>First Scene</label></div>
+        <select id="selectFirstScene">
+            <option value="canvastext">Canvas Left, Text Right</option>
+            <option value="textcanvas">Text Left, Canvas Right</option>
+            <option value="text">Text Only</option>
+            <option value="canvas">Canvas Only</option>
+        </select>
+    </div>
+
+
+    <div id="divCheckboxes">
+        <div>
+            <input type="checkbox" id="checkboxPrivate" class="css-checkbox" checked />
+            <label for="checkboxPrivate" class="css-label">Private</label>
+
+            <input type="checkbox" id="checkboxAllowComments" class="css-checkbox" checked />
+            <label for="checkboxAllowComments" class="css-label">Allow Comments</label>
+        </div>
+    </div>
+
+    <div id="divButtons">
+        <button id="buttonDialogOk" class="buttonCustom2">Create</button>
+        <button id="buttonDialogCancel" class="buttonCustom1">Cancel</button>
+    </div>
+
+</div>

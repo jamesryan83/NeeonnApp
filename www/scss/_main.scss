@@ -1,0 +1,197 @@
+// Main div
+#divMainContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+
+    // Content area
+    #divContentContainer {
+        float: left;
+
+        // Title bar
+        #divTitleBar {
+            height: 25px;
+            width: 100%;
+            background-color: $colorGrayDark;
+            line-height: 25px;
+
+            img {
+                margin-left: 20px;
+            }
+
+            #labelPageTitle {
+                float: right;
+                margin-right: 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        // Main content
+        #divMainContent {
+            width: 100%;
+            height: 100%;
+
+            > div {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    // Nav bar
+    #divNavBarContainer {
+        background-color: $colorGrayDark;
+        //float: right;
+        //position: relative;
+        position: absolute;  // get it to stick to the bottom/side
+        overflow-y: auto;
+        height: 100%;
+        width: $divNavBarWidth;
+        right: 0;
+        bottom: 0;
+
+        #divNavBarMain > div {
+            height: 20%;
+        }
+
+        #divNavBarAccount > div {
+            height: 20%; //16.667%;
+        }
+
+        #divNavBarEditStoryboard > div {
+            height: 25%;
+        }
+
+        .divNavBar {
+            height: 100%;
+            width: 100%;
+
+            > div {
+                background-size: 30px 30px;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: $divNavBarWidth;
+
+                &:active {
+                    background-color: $colorGrayMedium2;
+                }
+            }
+
+            // Main Buttons
+            #divButtonCamera {
+                background-image: url(../res/svg/icon_camera_hover.svg);
+            }
+
+            #divButtonSearch {
+                background-image: url(../res/svg/icon_search_2.svg);
+            }
+
+            #divButtonAccount {
+                background-image: url(../res/svg/icon_account_hover.svg);
+            }
+
+            #divButtonHelp {
+                background-image: url(../res/svg/icon_help_hover.svg);
+            }
+
+            #divButtonBack {
+                background-image: url(../res/svg/icon_back_hover.svg);
+            }
+
+
+            // Account buttons
+            #divButtonStoryboards {
+                background-image: url(../res/svg/icon_storyboard_hover.svg);
+            }
+
+            #divButtonGallery {
+                background-image: url(../res/svg/icon_gallery_hover.svg);
+            }
+
+            #divButtonSocial {
+                background-image: url(../res/svg/icon_star_hover.svg);
+            }
+
+            #divButtonSettings {
+                background-image: url(../res/svg/icon_settings_hover.svg);
+            }
+
+
+            // Edit storyboard buttons
+            #divButtonEdit {
+                background-image: url(../res/svg/icon_edit_details_hover.svg);
+            }
+
+            #divButtonExpand {
+                background-image: url(../res/svg/icon_expand_hover.svg);
+            }
+        }
+    }
+
+
+
+
+
+
+    // dialog container
+    #divDialogContainer {
+        position: absolute;
+        //position: fixed;  // can't scroll with this
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.60);
+        display: none;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        pointer-events: all;
+        z-index: 100;
+    }
+
+
+    // dialog container
+    #divEditSceneContainer {
+        @extend #divDialogContainer;
+        z-index: 50 !important;
+        overflow-y: auto;
+    }
+
+
+
+
+
+    // Portrait layout
+    @media (orientation: portrait) {
+        #divContentContainer {
+            float: none !important;
+            width: 100% !important;
+        }
+
+        #divNavBarContainer {
+            float: none !important;
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
+            height: $divNavBarWidth;
+            width: 100%;
+
+            #divNavBarMain > div {
+                width: 20% !important;
+            }
+
+            #divNavBarAccount > div {
+                width: 20% !important; // 16.667%
+            }
+
+            #divNavBarEditStoryboard > div {
+                width: 25% !important;
+            }
+
+            .divNavBar > div {
+                float: left !important;
+                height: $divNavBarWidth !important;
+            }
+
+        }
+    }
+}

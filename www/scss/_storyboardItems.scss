@@ -1,0 +1,352 @@
+
+
+
+// Container for below
+.divStoryboardItemContainer {
+    margin: 5px 0 30px 0;
+    padding: 0 5px;
+
+    // Storyboard Item on Storyboard page & Search page
+    .divStoryboardItem {
+        height: 100%;
+
+
+        // Title
+        .divDetailsTop {
+            height: 45px;
+            width: 100%;
+
+            label {
+                font-size: 0.85em;
+                height: 21px;
+                line-height: 21px;
+                vertical-align: top;
+                color: $colorGrayVeryLight;
+            }
+
+            // top row
+            .divTopRow {
+                .labelUsername { 
+                    float: left;
+                    margin-left: 5px;
+                }
+
+                .labelSceneNumber {
+                    float: right;
+                    color: $colorGrayVeryLight;
+                    font-size: 0.85em;
+                    margin-right: 5px;
+                }
+
+                .divButtonPrivate {
+                    display: none;
+                    float: left;
+                    width: 20px;
+                    height: 20px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-image: url(../res/svg/icon_lock_hover.svg);
+                }
+            }
+
+            // second row
+            .divBottomRow {
+                .divLabelTitleContainer {
+                    float: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    padding-left: 5px;
+                    color: $colorGrayVeryLight;
+
+                    .labelTitle {
+                        font-weight: bold;
+                        color: $colorGrayVeryLight;
+                    }
+                }
+
+                .divLabelCategoryContainer {
+                    float: right;
+                    padding-right: 5px;
+                    width: 135px;
+
+                    .labelCategory {
+                        float: right;
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+
+
+
+
+        // Content area
+        .divInner {
+            position: relative;
+            text-align: left;
+            background-color: white;
+            //box-shadow: 1px 1px 3px 1px $colorGrayVeryLight;
+
+            // Content area
+            .divContentArea {
+                width: 100%;
+                height: 100%;
+
+                // image
+                .divPicture {
+                    height: 100%;
+                    width: 50%;
+
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                // text
+                .divText {
+                    text-align: left;
+                    overflow: hidden;
+                    font-size: 0.8em;
+                    height: 100%;
+
+                    .divActualText {
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        max-width: 100%;
+                        padding: 10px;
+
+                        h1, h2, p {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            word-wrap: break-word;
+                        }
+
+                        ul, ol {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Stuff along bottom
+        .divDetailsBottom {
+            width: 100%;
+            //height: 25px;
+            margin-top: 5px;
+
+
+            .divButton {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-size: 18px 18px;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 10px;
+            }
+
+            .divBottomButtons {
+                float: right;
+
+                .divButtonDelete {
+                    background-image: url(../res/svg/icon_delete_hover.svg);
+                }
+
+                .divButtonShare {
+                    background-image: url(../res/svg/icon_share_hover.svg);
+                }
+
+                .divButtonEdit {
+                    margin-right: 0;
+                    background-image: url(../res/svg/icon_edit_hover.svg);
+                }
+            }
+
+
+//            .divCommentStar {
+//                float: left;
+//
+//                label {
+//                    height: 25px;
+//                    line-height: 25px;
+//                    vertical-align: top;
+//                    font-size: 0.9em;
+//                    color: $colorGrayVeryLight;
+//                }
+//
+//                .divButtonComment {
+//                    background-image: url(../res/svg/icon_comments_hover.svg);
+//                }
+//
+//                .divButtonStar {
+//                    background-image: url(../res/svg/icon_star_hover.svg);
+//                }
+//            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// Scene item on Edit-Storyboard page
+.divSceneItemContainer {
+    margin: 5px;
+    background-color: white;
+
+    .divSceneItem {
+        height: 100%;
+        position: relative;
+
+
+        .divSceneContent {
+            height: 100%;
+            //box-shadow: 1px 1px 2px 1px $colorGrayVeryLight;
+
+            > div {
+                float: left;
+                vertical-align: top;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            // canvas
+            .divSceneCanvas {
+                svg {
+                    height: 100%;
+                    width: 100%;
+                }
+
+                &:active {
+                    background-color: rgba(245, 0, 255, 0.5);
+                }
+            }
+
+
+            .divSeparator {
+                display: none;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                width: 2px;
+                height: 100%;
+                background-color: $colorGrayVeryLight;
+            }
+
+
+            // text
+            .divSceneText {
+                text-align: left;
+                font-size: 0.8em;
+
+                .divActualText {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    max-height: 100%;
+                    max-width: 100%;
+                    padding: 5px;
+
+                    h1, h2, p {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        word-wrap: break-word;
+                    }
+
+                    ul, ol {
+                        margin-left: 20px;
+                    }
+                }
+
+                &:active {
+                    background-color: rgba(0, 0, 255, 0.5);
+                }
+            }
+        }
+
+
+        // Scene overlay
+        .divSceneOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: none;
+
+            > div {
+                position: absolute;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                height: 30px;
+                width: 100%;
+            }
+
+
+            // Top
+            .divDetailsTop {
+                top: 0;
+
+                .divDetailsTopLabelLeft, .divDetailsTopLabelRight {
+                    width: 50%;
+                    float: left;
+                    height: 30px;
+                    line-height: 30px;
+
+                    > label {
+                        color: $colorNeonPink;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+
+            // Bottom
+            .divDetailsBottom {
+                bottom: 0;
+
+                .divButton {
+                    height: 30px;
+                    width: 30px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 15px 15px;
+                }
+
+                .divSceneDelete {
+                    float: left;
+                    margin-left: 15px;
+                    background-image: url("../res/svg/icon_delete_hover.svg");
+                }
+
+                .divSceneHandleContainer {
+                    width: 70px;
+                    float: right;
+
+                    .divSceneHandle {
+                        float: right;
+                        margin-right: 15px;
+                        background-image: url("../res/svg/icon_handle_hover.svg");
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}
+

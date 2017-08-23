@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="23.751" width="30" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<metadata>
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g transform="matrix(1.0247395,0,0,1.0247395,-2387.259,410.7832)">
+		<rect style="enable-background:accumulate;color:#000000;" ry="0" height="3" width="29.274" y="-380.69" x="2329.6" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" ry="0" height="19.158" width="3" y="-396.85" x="2329.6" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" ry="0" height="20.569" width="3" y="-398.26" x="2355.9" fill="#b3b3b3"/>
+		<rect ry="0" style="enable-background:accumulate;color:#000000;" transform="matrix(0,-1,1,0,0,0)" height="7.4913" width="3" y="2340.8" x="397.78" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" transform="matrix(0,-1,1,0,0,0)" ry="0" height="8.4238" width="3" y="2350.5" x="395.25" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" transform="matrix(0,-1,1,0,0,0)" ry="0" height="7.3529" width="3" y="2329.6" x="393.85" fill="#b3b3b3"/>
+		<path style="enable-background:accumulate;color:#000000;" d="m2337-393.86-1.4939-1.7481,5.3216-5.1661,1.4882,1.4448z" fill="#b3b3b3"/>
+		<path style="enable-background:accumulate;color:#000000;" d="m2351.9-397.04-1.429,1.7613-3.6195-4.0068,1.4396-1.4903z" fill="#b3b3b3"/>
+		<rect ry="0" style="enable-background:accumulate;color:#000000;" transform="matrix(0,-1,1,0,0,0)" height="6.088" width="2.0548" y="2330.4" x="398.81" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" ry="0" height="3.2502" width="2.0548" y="-399.58" x="2330.4" fill="#b3b3b3"/>
+		<rect style="enable-background:accumulate;color:#000000;" ry="0" height="3.2502" width="2.0548" y="-399.58" x="2334.4" fill="#b3b3b3"/>
+		<path style="enable-background:accumulate;color:#000000;" d="m2133.5,516.49c0,18.018-14.607,32.625-32.625,32.625s-32.625-14.607-32.625-32.625,14.607-32.625,32.625-32.625,32.625,14.607,32.625,32.625z" transform="matrix(0.16604635,0,0,0.16604635,1995.5689,-474.32038)" stroke="#b3b3b3" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="17.63105965" fill="none"/>
+	</g>
+</svg>

@@ -1,0 +1,176 @@
+
+// Storyboards
+#divStoryboardsMain {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    #divStoryboards {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll !important;
+        text-align: center;
+        padding: 10px 5px 60px 5px;
+    }
+
+    #divLoading {
+        display: inline-block;
+    }
+
+    #divNoStoryboards {
+        padding-top: 50px;
+        text-align: center;
+        color: $colorGrayMedium2;
+    }
+
+}
+
+
+
+// Gallery
+#divGalleryMain {
+    display: inline-block;
+    position: relative;
+    width: 850px;
+    margin-top: 10px;
+    color: $colorGrayMedium;
+
+    label {
+        margin: 10px;
+    }
+
+    #divButtons {
+        #buttonFromUrl, #buttonFromComputer {
+            margin: 0 15px;
+        }
+    }
+
+    #divGalleryImagesContainer {
+
+        #divPictures {
+            margin: 30px 0;
+        }
+
+        #divNoImages {
+            margin-top: 50px;
+        }
+    }
+
+}
+
+
+
+// Social
+#divContentSocial {
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+
+
+    #divContentSocialContainer {
+        width: 900px;
+        text-align: left;
+
+        #divSocialStatistics {
+
+        }
+
+        #divSocialActivity {
+
+        }
+
+    }
+}
+
+
+
+
+// Settings
+#divSettingsMain {
+    position: relative;
+    overflow-y: auto;
+    text-align: center;
+
+    h3 {
+        color: $colorNeonPink;
+        margin: 5px 0;
+    }
+
+    // Inputs
+    .divLabelInput {
+        text-align: center;
+        margin: 15px 0;
+
+        > div {
+            text-align: left;
+            display: inline-block;
+            width: 80px;
+            color: $colorGrayVeryLight;
+        }
+
+        input {
+            color: black;
+            width: 300px;
+            border: 1px solid $colorGrayMedium;
+        }
+
+        @media (orientation: portrait) {
+            > div {
+                text-align: center;
+            }
+        }
+    }
+
+    #divPasswordLink {
+        width: 300px;
+        text-align: center;
+
+        a {
+            color: aqua;
+            white-space: nowrap;
+
+            &:visited {
+                color: aqua;
+            }
+        }
+    }
+
+
+    // Buttons
+    #divSettingsButtons {
+        display: inline-block;
+        margin-bottom: 5px;
+
+        button {
+            width: 125px;
+            margin: 5px;
+            color: $colorGrayDark;
+            border: 1px solid transparent;
+            font-size: 0.9em;
+        }
+
+        #buttonSettingsLogout {
+            background-color: $colorOrangeMedium;
+        }
+
+        #buttonSettingsDisable, #buttonSettingsEnable {
+            background-color: $colorOrangeMedium;
+            display: none;
+        }
+    }
+
+
+    // Offline mode div
+    #divOfflineMode {
+        color: $colorGrayVeryLight;
+        white-space: nowrap;
+    }
+
+}
+
+
+
+
+
+
+

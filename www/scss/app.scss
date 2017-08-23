@@ -1,0 +1,91 @@
+$divNavBarWidth: 50px;
+
+$colorNeonPink: #ff4082;
+$colorGrayDark: #333333;
+$colorGrayDark2: #444444;
+$colorGrayVeryLight: #eaeaea;
+$colorGrayLight: #d3d3d3;
+$colorGrayMedium: #b3b3b3;
+$colorGrayMedium2: #838383;
+$colorGreenMedium: #68ff68;
+$colorOrangeMedium: #ffc253;
+$colorRedMedium: #ff4f4f;
+
+$fontStack: open-sans, Helvetica Neue, Helvetica, Arial, sans-serif; // Papyrus
+
+@import "common";
+@import "main";
+@import "loginRegister";
+@import "search";
+@import "storyboardItems";
+@import "account";
+@import "dialogs";
+@import "dialogScene";
+@import "editStoryboard";
+
+
+
+
+@font-face {
+  font-family: "open-sans";
+  src: url(../res/fonts/OpenSans-Regular.ttf), url(../res/fonts/OpenSans-Regular.eot);
+}
+
+@font-face {
+  font-family: "open-sans-light";
+  src: url(../res/fonts/OpenSans-Light.ttf), url(../res/fonts/OpenSans-Light.eot);
+}
+
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fontStack;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // prevent callout to copy image, etc when tap to hold
+    -webkit-touch-callout: none;
+    // prevent webkit from resizing text to fit
+    -webkit-text-size-adjust: none;
+    // prevent copy paste, to allow, change 'none' to 'text'
+    -webkit-user-select: text;
+}
+
+
+#divAppContainer {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: $colorGrayDark2;
+
+    > div {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+.highlightColor {
+    color: $colorNeonPink;
+}
+
+
+#divHelpMain {
+    color: $colorGrayMedium;
+
+    p {
+        margin: 10px;
+    }
+}

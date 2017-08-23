@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://192.168.1.1 data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: *; connect-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+
+        <title>Neeonn</title>
+
+        <link rel="stylesheet" href="lib/normalize.css" />
+        <link rel="stylesheet" href="lib/spectrum/spectrum.css" />
+        <link rel="stylesheet" href="lib/cropper/cropper.min.css" />
+        <link rel="stylesheet" href="css/app.css" />
+
+        <script src="cordova.js"></script>
+        <script src="lib/jquery-2.1.4.js"></script>
+        <script src="lib/underscore.js"></script>
+        <script src="lib/backbone.js"></script>
+        <script src="lib/fabric.js"></script>
+        <script src="lib/Sortable.js"></script>
+        <script src="lib/hammer.min.js"></script>
+        <script src="lib/spectrum/spectrum.js"></script>
+        <script src="lib/ckeditor/ckeditor.js"></script>
+        <script src="lib/cropper/canvas-to-blob.min.js"></script>
+        <script src="lib/cropper/cropper.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Div App -->
+        <div id="divAppContainer">
+
+        </div>
+
+
+
+        <!-- -------------------- Templates --------------------- -->
+        <!-- templates included with htmlcat -->
+
+        <!-- Main -->
+        <script type="text/template" id="templateMain">{% include main.html %}</script>
+
+        <!-- Login/Register -->
+        <script type="text/template" id="templateLoginRegister">{% include loginRegister.html %}</script>
+
+        <!-- Account -->
+        <script type="text/template" id="templateStoryboards">{% include storyboards.html %}</script>
+        <script type="text/template" id="templateGallery">{% include gallery.html %}</script>
+        <script type="text/template" id="templateSocial">{% include social.html %}</script>
+        <script type="text/template" id="templateSettings">{% include settings.html %}</script>
+
+        <!-- Other pages -->
+        <script type="text/template" id="templateSearch">{% include search.html %}</script>
+        <script type="text/template" id="templateEditStoryboard">
+            {% include editStoryboard.html %}</script>
+        <script type="text/template" id="templateHelp">{% include help.html %}</script>
+
+        <!-- Dialogs -->
+        <script type="text/template" id="templateDialogCreateStoryboard">
+            {% include dialogs/dialogCreateStoryboard.html %}</script>
+        <script type="text/template" id="templateDialogSearch">
+            {% include dialogs/dialogSearch.html %}</script>
+        <script type="text/template" id="templateDialogChangePassword">
+            {% include dialogs/dialogChangePassword.html %}</script>
+        <script type="text/template" id="templateDialogOkCancel">
+            {% include dialogs/dialogOkCancel.html %}</script>
+        <script type="text/template" id="templateDialogAddScene">
+            {% include dialogs/dialogAddScene.html %}</script>
+        <script type="text/template" id="templateDialogEditStoryboardDetails">
+            {% include dialogs/dialogEditStoryboardDetails.html %}</script>
+        <script type="text/template" id="templateDialogStoryboardFullScreen">
+            {% include dialogs/dialogStoryboardFullScreen.html %}</script>
+        <script type="text/template" id="templateDialogEditSceneCanvas">
+            {% include dialogs/dialogEditSceneCanvas.html %}</script>
+        <script type="text/template" id="templateDialogEditSceneText">
+            {% include dialogs/dialogEditSceneText.html %}</script>
+        <script type="text/template" id="templateDialogPhotoCanvas">
+            {% include dialogs/dialogPhotoCanvas.html %}</script>
+        <script type="text/template" id="templateDialogAddImage">
+            {% include dialogs/dialogAddImage.html %}</script>
+        <script type="text/template" id="templateDialogEditImage">
+            {% include dialogs/dialogEditImage.html %}</script>
+
+        <!-- Items -->
+        <script type="text/template" id="templateStoryboardItem">
+            {% include itemStoryboard.html %}</script>
+        <script type="text/template" id="templateStoryboardSceneItem">
+            {% include itemScene.html %}</script>
+
+
+
+
+        <!-- -------------------- Scripts --------------------- -->
+        <script src="js/data.js"></script>
+        <script src="js/fileFolder.js"></script>
+        <script src="js/sceneItem.js"></script>
+        <script src="js/server.js"></script>
+        <script src="js/serverOffline.js"></script>
+        <script src="js/storyboardItem.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/utilAndroid.js"></script>
+        <script src="js/utilStoryboard.js"></script>
+        <script src="js/view_accountGallery.js"></script>
+        <script src="js/view_accountSettings.js"></script>
+        <script src="js/view_accountSocial.js"></script>
+        <script src="js/view_accountStoryboards.js"></script>
+        <script src="js/view_dialog.js"></script>
+        <script src="js/view_dialogSceneCanvas.js"></script>
+        <script src="js/view_dialogSceneText.js"></script>
+        <script src="js/view_editImage.js"></script>
+        <script src="js/view_editStoryboard.js"></script>
+        <script src="js/view_help.js"></script>
+        <script src="js/view_loginRegister.js"></script>
+        <script src="js/view_search.js"></script>
+        <script src="js/view_main.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

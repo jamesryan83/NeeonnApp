@@ -1,0 +1,50 @@
+<!-- Search dialog -->
+<div id="divSearchDialog" class="center">
+
+    <h2>Search</h2>
+
+    <!-- Search Bar -->
+    <div id="divSearchBar">
+        <div id="divIconSearch"></div>
+        <input id="inputSearchTerm" class="inputCustom1" placeholder="Search Everything..." />
+    </div>
+
+
+    <!-- Search Properties -->
+    <div id="divSearchProperties">
+        <div id="divSearchSelects">
+            <table>
+                <tr>
+                    <td><label>Category</label></td>
+                    <td><select id="selectSearchCategory"></select></td>
+                </tr>
+
+                <tr>
+                    <td><label>Sort by</label></td>
+                    <td><select id="selectSearchSortBy"></select></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="divSearchCheckBoxes">
+            <input type="checkbox" id="checkboxSearchTitles"
+                class="css-checkbox" checked />
+            <label for="checkboxSearchTitles" class="css-label">Titles</label>
+
+            <input type="checkbox" id="checkboxSearchUsernames"
+                class="css-checkbox"/>
+            <label for="checkboxSearchUsernames" class="css-label">Usernames</label>
+
+            <input type="checkbox" id="checkboxSearchText"
+                class="css-checkbox" />
+            <label for="checkboxSearchText" class="css-label">Text</label>
+        </div>
+    </div>
+
+
+    <!-- Buttons -->
+    <div id="divButtons">
+        <button id="buttonSearchGo" class="buttonCustom2">Search</button>
+        <button id="buttonSearchCancel" class="buttonCustom1">Cancel</button>
+    </div>
+</div>

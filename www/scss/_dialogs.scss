@@ -1,0 +1,719 @@
+
+// Create storyboard
+#divDialogCreateStoryboard {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 400px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+    }
+
+    label {
+        color: $colorGrayMedium;
+        white-space: nowrap;
+    }
+
+    .divLabelInput {
+        margin: 15px 0;
+
+        > div {
+            text-align: left;
+            display: inline-block;
+            width: 80px;
+            margin-right: 5px;
+        }
+
+        input, select {
+            color: black;
+            width: 250px;
+        }
+    }
+
+    #divCheckboxes {
+        margin: 10px 0;
+        text-align: center;
+
+        label:first-of-type {
+            margin-right: 15px;
+        }
+    }
+
+    #divButtons {
+        padding: 5px;
+        width: 100%;
+        margin-top: 5px;
+
+        #buttonDialogCancel {
+            float: right;
+        }
+    }
+
+
+    @media (orientation: portrait) {
+        width: 310px !important;
+
+        .divLabelInput > div {
+            text-align: center !important;
+            display: block !important;
+            margin-right: 0 !important;
+            width: auto !important;
+            margin-bottom: 5px !important;
+        }
+
+        button {
+            float: none !important;
+            width: 120px !important;
+            margin: 0 5px !important;
+        }
+    }
+}
+
+
+
+
+// Search dialog
+#divSearchDialog {
+    display: inline-block;
+    width: 400px;
+    padding: 5px;
+    background-color: $colorGrayDark;
+    border: 1px solid black;
+    border-radius: 3px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+    }
+
+    // search bar
+    #divSearchBar {
+        margin-bottom: 10px;
+
+        > div {
+            display: inline-block;
+        }
+
+        #divIconSearch {
+            height: 20px;
+            width: 20px;
+            background-image: url("../res/svg/icon_search.svg");
+            background-repeat: no-repeat;
+            margin-bottom: -3px;
+        }
+
+        #inputSearchTerm {
+            width: 300px;
+            border: 1px solid $colorGrayMedium;
+            margin-left: 5px;
+        }
+
+        // http://stackoverflow.com/a/12250084
+        #inputSearchTerm:focus::-webkit-input-placeholder { color:transparent; }
+        #inputSearchTerm:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+        #inputSearchTerm:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+        #inputSearchTerm:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+        #buttonSearchGo {
+            width: 100px;
+        }
+    }
+
+
+    // search properties
+    #divSearchProperties {
+        margin-bottom: 10px;
+
+        > div {
+            display: inline-block;
+        }
+
+        label {
+            color: $colorGrayMedium;
+        }
+
+        // Selects
+        #divSearchSelects {
+            text-align: left;
+            margin-bottom: 5px;
+
+            select {
+                width: 200px;
+                border: 1px solid $colorGrayMedium;
+            }
+        }
+
+        // Checkboxes
+        #divSearchCheckBoxes {
+
+            label {
+                margin-left: 15px;
+            }
+
+            label:first-of-type {
+                margin-left: 0;
+            }
+        }
+
+    }
+
+    // Buttons
+    #divButtons {
+        button {
+            margin: 5px;
+        }
+    }
+
+
+    @media (orientation: portrait) {
+        width: 310px;
+
+        #inputSearchTerm {
+            width: 250px !important;
+        }
+
+        #divSearchCheckBoxes {
+            label:last-of-type {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// Change Password dialog
+#divChangePasswordDialog {
+    display: inline-block;
+    width: 400px;
+    padding: 5px;
+    background-color: $colorGrayDark;
+    border: 1px solid black;
+    border-radius: 3px;
+
+    label {
+        color: $colorGrayMedium;
+        font-size: 0.9em;
+        white-space: nowrap;
+    }
+
+    h3 {
+        color: $colorNeonPink;
+    }
+
+    .divLabelInput {
+        margin: 15px 0;
+
+        > div {
+            text-align: left;
+            display: inline-block;
+            width: 160px;
+            //margin-right: 51px;
+        }
+
+        input {
+            color: black;
+            width: 200px;
+        }
+    }
+
+    button {
+        width: 150px;
+        font-size: 0.9em;
+        margin: 5px;
+    }
+
+
+    @media (orientation: portrait) {
+        width: 300px !important;
+
+        .divLabelInput > div {
+            text-align: center !important;
+            display: block !important;
+            margin-right: 0 !important;
+            width: auto !important;
+            margin-bottom: 5px !important;
+        }
+
+        button {
+            width: 120px !important;
+        }
+    }
+}
+
+
+
+
+
+// Ok Cancel dialog
+#divDialogOkCancel {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 390px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+    }
+
+    p {
+        text-align: center;
+        font-size: 0.85em;
+        color: white;
+    }
+
+    #divButtons {
+        display: inline-block;
+        padding: 5px;
+        margin-top: 5px;
+
+        button {
+            color: $colorGrayDark;
+            border: 1px solid transparent;
+            font-size: 0.9em;
+            width: 150px;
+            margin: 5px 10px;
+        }
+
+        #buttonDialogOk {
+            background-color: $colorGreenMedium;
+        }
+
+        #buttonDialogCancel {
+            background-color: $colorRedMedium;
+        }
+    }
+
+    @media (orientation: portrait) {
+        padding: 10px !important;
+        width: 300px !important;
+
+        button {
+            width: 100px !important;
+        }
+    }
+}
+
+
+
+
+// Add scene dialog
+#divDialogAddScene {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+
+    h3 {
+        color: $colorNeonPink;
+        font-size: 1.2em;
+    }
+
+    .divDialogButtons {
+        display: block;
+        margin: 15px;
+        white-space: nowrap;
+
+        > div {
+            margin: 0 5px;
+            height: 40px;
+            width: 75px;
+            background-repeat: no-repeat;
+            background-size: 25px;
+            vertical-align: middle;
+            border: 1px solid $colorGrayMedium;
+            border-radius: 3px;
+            display: inline-block;
+
+            &:active {
+                border: 1px solid $colorNeonPink;
+            }
+        }
+    }
+
+    #divButtonCanvasText {
+        background-image: url(../res/svg/icon_canvas.svg), url(../res/svg/icon_text.svg);
+        background-position: 10px, 40px;
+    }
+
+    #divButtonTextCanvas {
+        background-image: url(../res/svg/icon_text.svg), url(../res/svg/icon_canvas.svg);
+        background-position: 10px, 40px;
+    }
+
+    #divButtonTextOnly {
+        background-image: url(../res/svg/icon_text.svg);
+        background-position: center;
+    }
+
+    #divButtonCanvasOnly {
+        background-image: url(../res/svg/icon_canvas.svg);
+        background-position: center;
+    }
+
+    #buttonDialogCancel {
+        font-size: 0.9em;
+        margin: 10px;
+
+        &:active {
+            border: 1px solid $colorNeonPink;
+        }
+    }
+}
+
+
+
+// Create storyboard
+#divDialogEditStoryboardDetails {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 400px;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+        font-size: 1.2em;
+    }
+
+    // Controls
+    #divEditStoryboardControls {
+        text-align: center;
+        color: $colorGrayMedium;
+
+        .divLabelInput {
+            margin: 15px 0;
+
+            > div {
+                text-align: left;
+                display: inline-block;
+                width: 80px;
+                margin-right: 5px;
+            }
+
+            input, select {
+                color: black;
+                width: 250px;
+            }
+        }
+
+        #divCheckboxes {
+            margin: 15px 0;
+
+            label:first-of-type {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    #divButtons {
+        padding: 5px;
+        width: 100%;
+        margin-top: 5px;
+
+        #buttonDialogCancel {
+            float: right;
+        }
+    }
+
+    @media (orientation: portrait) {
+        width: 300px !important;
+
+        .divLabelInput > div {
+            text-align: center !important;
+            display: block !important;
+            margin-right: 0 !important;
+            width: auto !important;
+            margin-bottom: 5px !important;
+        }
+
+        button {
+            float: none !important;
+            width: 120px !important;
+            margin: 0 5px !important;
+        }
+    }
+}
+
+
+
+
+// Storyboard full screen dialog
+#divDialogStoryboardFullScreen {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: $colorGrayDark;
+
+    // title
+    #divTitle {
+        height: 30px;
+        background-color: $colorGrayDark;
+        text-align: left;
+
+        h2 {
+            display: inline-block;
+            margin-left: 20px;
+            color: $colorNeonPink;
+            line-height: 30px;
+            font-size: 1.1em;
+        }
+
+//        hr {
+//            border-color: $colorGrayMedium;
+//        }
+
+        #divCloseButton {
+            float: right;
+            margin-right: 10px;
+            height: 30px;
+            width: 30px;
+            background-image: url(../res/svg/icon_close_hover.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+
+    // content
+    #divContent {
+        text-align: left;
+        overflow-y: scroll;
+        margin-top: 2px;
+
+        .divSceneItem {
+            position: relative;
+
+            h1, h2, p {
+                margin: 0 !important;
+                padding: 0 !important;
+                word-wrap: break-word;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+
+            > div {
+                height: 100%;
+                position: relative;
+            }
+
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+
+            .divImageLeft {
+                float: left;
+                margin-right: 10px;
+                width: 50%;
+                text-align: center;
+            }
+
+            .divImageRight {
+                float: right;
+                margin-left: 10px;
+                width: 50%;
+                text-align: center;
+            }
+
+            .divImageCenter {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+
+
+        .divSceneGap {
+            height: 15px;
+            padding: 10px;
+
+            hr {
+                background-color: $colorGrayVeryLight;
+            }
+        }
+
+        .divSceneGap:first-of-type, .divSceneGap:last-of-type {
+            height: 15px;
+            padding: 0;
+
+//            hr {
+//                display: none;
+//            }
+        }
+
+        .divCenterSceneVertical {
+            display: table;
+            height: 100%;
+
+            .divCenterSceneVerticalInner {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+    #divBottom {
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $colorGrayDark;
+
+        #labelUsername {
+            color: $colorNeonPink;
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 15px;
+        }
+
+
+        #divButtons {
+            float: right;
+
+            label {
+                height: 30px;
+                line-height: 30px;
+                vertical-align: top;
+                font-size: 0.9em;
+                color: white;
+            }
+
+            > div {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 15px;
+            }
+
+            #divButtonShare {
+                background-image: url(../res/svg/icon_share_hover.svg);
+            }
+
+            #divButtonComment {
+                background-image: url(../res/svg/icon_comments_hover.svg);
+            }
+
+            #divButtonStar {
+                background-image: url(../res/svg/icon_star_hover.svg);
+            }
+        }
+    }
+}
+
+
+// Add Image dialog
+#divAddImage {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 250px;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+        font-size: 1.2em;
+    }
+
+    #divButtons {
+        display: inline-block;
+
+        button {
+            display: block;
+            margin: 15px;
+        }
+    }
+
+    #divFromUrl {
+        display: none;
+
+        label {
+            color: $colorGrayMedium;
+        }
+
+        .divLabelInput {
+            margin: 15px 0;
+
+            > div {
+                text-align: left;
+                display: inline-block;
+                width: 35px;
+                margin-right: 5px;
+            }
+
+            input {
+                color: black;
+                width: 230px;
+            }
+        }
+
+        #divFromUrlButtons {
+            button {
+                width: 120px;
+                margin: 5px;
+            }
+        }
+    }
+}
+
+
+
+// Edit Image dialog
+#divEditImage {
+    background-color: $colorGrayDark;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 300px;
+    text-align: center;
+
+    h3 {
+        margin-bottom: 5px;
+        color: $colorNeonPink;
+        font-size: 1.2em;
+    }
+
+    #divImage {
+        display: inline-block;
+        margin: 15px 0;
+        height: 280px;
+        width: 280px;
+        background-color: white;
+
+        img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    #divButtons {
+        button {
+            width: 120px;
+            margin: 5px;
+        }
+    }
+
+}

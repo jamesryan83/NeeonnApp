@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-scanmediafile": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.james.neeonn"
+        }
+    },
+    "dependent_plugins": {}
+}

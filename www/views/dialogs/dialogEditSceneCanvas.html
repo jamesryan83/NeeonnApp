@@ -1,0 +1,44 @@
+<!-- Edit Scene dialog -->
+<div id="divEditSceneCanvasDialog">
+
+    <!-- Heading div -->
+    <div id="divEditSceneTop">
+        <div id="divCloseButton" class="longClickable" title="Cancel and Close"></div>
+        <label>Canvas</label>
+        <div id="divSaveButton" class="longClickable" title="Save and Close"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="divEditSceneContent">
+        <div id="divCanvas" class="center">
+            <canvas id="canvasMain" tabindex="1"></canvas>
+        </div>
+    </div>
+
+
+    <!-- Bottom div -->
+    <div id="divEditSceneBottom">
+        <div id="divCanvasControls">
+            <input type="text" id="inputSceneColorPicker" />
+            <div class="divCanvasButtonDelete longClickable" title="Delete Selected Object"></div>
+            <div class="divCanvasButtonSelect longClickable" title="Select Mode"></div>
+            <div class="divCanvasButtonSketch longClickable" title="Sketch Mode"></div>
+            <select class="selectPathThickness longClickable" title="Sketch pen thickness">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5" selected="true">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+            <div class="divCanvasButtonText longClickable" title="Add Text"></div>
+            <div class="divCanvasButtonPicture longClickable" title="Add Picture"></div>
+            <div class="divCanvasButtonUndo longClickable" title="Undo last action"></div>
+            <div class="divCanvasButtonRedo longClickable" title="Redo last action"></div>
+            <div class="divCanvasButtonMoveDown longClickable" title="Move Down"></div>
+            <div class="divCanvasButtonMoveUp longClickable" title="Move Up"></div>
+            <div class="divCanvasButtonClear longClickable" title="Clear whole Canvas"></div>
+        </div>
+    </div>
+
+</div>
+

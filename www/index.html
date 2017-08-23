@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://192.168.1.1 data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: *; connect-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+
+        <title>Neeonn</title>
+
+        <link rel="stylesheet" href="lib/normalize.css" />
+        <link rel="stylesheet" href="lib/spectrum/spectrum.css" />
+        <link rel="stylesheet" href="lib/cropper/cropper.min.css" />
+        <link rel="stylesheet" href="css/app.css" />
+
+        <script src="cordova.js"></script>
+        <script src="lib/jquery-2.1.4.js"></script>
+        <script src="lib/underscore.js"></script>
+        <script src="lib/backbone.js"></script>
+        <script src="lib/fabric.js"></script>
+        <script src="lib/Sortable.js"></script>
+        <script src="lib/hammer.min.js"></script>
+        <script src="lib/spectrum/spectrum.js"></script>
+        <script src="lib/ckeditor/ckeditor.js"></script>
+        <script src="lib/cropper/canvas-to-blob.min.js"></script>
+        <script src="lib/cropper/cropper.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Div App -->
+        <div id="divAppContainer">
+
+        </div>
+
+
+
+        <!-- -------------------- Templates --------------------- -->
+        <!-- templates included with htmlcat -->
+
+        <!-- Main -->
+        <script type="text/template" id="templateMain"><!-- Div Main (code is in view_app.js) -->
+<div id="divMainContainer">
+
+    <div id="divContentContainer">
+        <div id="divTitleBar">
+            <img src="res/images/title_a.png" height="15" />
+            <label id="labelPageTitle" class="highlightColor"></label>
+        </div>
+
+        <div id="divMainContent">
+
+        </div>
+    </div>
+
+    <div id="divNavBarContainer">
+        <div id="divNavBarMain" class="divNavBar" style="display: none">
+            <div id="divButtonCamera" class="longClickable" title="Take a Photo"></div>
+            <div id="divButtonSearch" class="longClickable" title="Public Search"></div>
+            <div id="divButtonAccount" class="longClickable" title="My Account"></div>
+            <div id="divButtonHelp" class="longClickable" title="Help"></div>
+            <div id="divButtonBack" class="longClickable" title="Back to previous screen"></div>
+        </div>
+
+        <div id="divNavBarAccount" class="divNavBar" style="display: none">
+            <div id="divButtonCamera" class="longClickable" title="Take a Photo"></div>
+            <div id="divButtonStoryboards" class="longClickable" title="My Storyboards"></div>
+            <div id="divButtonGallery" class="longClickable" title="My Gallery"></div>
+            <!-- <div id="divButtonSocial" class="longClickable" title="Social"></div>-->
+            <div id="divButtonSettings" class="longClickable" title="Account Settings"></div>
+            <div id="divButtonBack" class="longClickable" title="Back to previous screen"></div>
+        </div>
+
+        <div id="divNavBarEditStoryboard" class="divNavBar" style="display: none">
+            <div id="divButtonCamera" class="longClickable" title="Take a Photo"></div>
+            <div id="divButtonEdit" class="longClickable" title="Edit Storyboard Details"></div>
+            <div id="divButtonExpand" class="longClickable" title="View Full Screen"></div>
+            <div id="divButtonBack" class="longClickable" title="Back to previous screen"></div>
+        </div>
+    </div>
+
+
+    <!-- Dialog div-->
+    <div id="divDialogContainer">
+        <div id="divDialogContainerInner"></div>
+    </div>
+
+
+
+    <!-- Edit Scene div-->
+    <div id="divEditSceneContainer"></div>
+
+</div>
+</script>
+
+        <!-- Login/Register -->
+        <script type="text/template" id="templateLoginRegister"><div id="divLoginRegisterMain">
+
+
+
+    <!-- background image -->
+    <div id="divBackgroundImage">
+        <img id="imgBackground" src="res/images/background_home.png" />
+    </div>
+
+    <div id="divLoginRegisterContent">
+
+        <!-- Title -->
+        <div id="divTitle">
+            <img src="res/images/title_big.png" height="40" />
+        </div>
+
+
+        <!-- Login -->
+        <div id="divInputsContainer">
+            <h2 id="h2LoginRegister">Login</h1>
+            <hr>
+
+            <div id="divUsername" class="divLabelInput">
+                <div><label>Username</label></div>
+                <input id="inputUsername" type="text">
+            </div>
+
+            <div class="divLabelInput">
+                <div><label>Email</label></div>
+                <input id="inputEmail" type="email">
+            </div>
+
+            <div class="divLabelInput">
+                <div><label>Password</label></div>
+                <input id="inputPassword" type="password"> 
+            </div>
+
+            <div>
+                <button id="buttonLoginRegister" class="buttonCustom1">Login</button>
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="divOtherLinks">
+                <a id="buttonGoToOther">Create an Account</a>
+                <a id="buttonOfflineMode">Offline Mode</a>
+            </div>
+        </div>
+
+        <div id="divLoading" class="center">
+            <img src="res/loading_hourglass2.svg" height="40" width="40" />
+        </div>
+
+    </div>
+
+</div>
+
+</script>
+
+        <!-- Account -->
+        <script type="text/template" id="templateStoryboards"><div id="divStoryboardsMain">
+
+    <!-- Storyboards -->
+    <div id="divStoryboards">
+
+    </div>
+
+    <!-- Loading -->
+    <div id="divLoading" class="center">
+        <img src="res/loading_hourglass2.svg" height="40" width="40" />
+    </div>
+
+    <!-- No storyboards message -->
+    <div id="divNoStoryboards">
+        <p>You have no Storyboards !</p>
+        <p>Click <b>the add button</b> to add one</p>
+    </div>
+
+
+    <div id="buttonCreateStoryboard" class="divAddItemOverlayButton longClickable" title="Add a new Storyboard"></div>
+</div>
+</script>
+        <script type="text/template" id="templateGallery"><div id="divGalleryMain">
+
+<label>not working yet</label>
+</div>
+</script>
+        <script type="text/template" id="templateSocial"><div id="divSocialMain">
+nothing yet
+
+</div>
+</script>
+        <script type="text/template" id="templateSettings"><!-- Content -->
+<div id="divSettingsMain">
+
+    <!-- Content -->
+    <div id="divSettingsContent">
+
+        <h3>Change Account Details</h3>
+
+
+        <div id="divFullName" class="divLabelInput">
+            <div><label>Full Name</label></div>
+            <input type="text" id="inputAccountSettingsFullName">
+        </div>
+
+        <div id="divUsername" class="divLabelInput">
+            <div><label>Username</label></div>
+            <input type="text" id="inputAccountSettingsUsername">
+        </div>
+
+        <div id="divEmail" class="divLabelInput">
+            <div><label>Email</label></div>
+            <input type="email" id="inputAccountSettingsEmail">
+        </div>
+
+        <div id="divWebsite" class="divLabelInput">
+            <div><label>Website</label></div>
+            <input type="text" id="inputAccountSettingsWebsite">
+        </div>
+
+        <div id="divLocation" class="divLabelInput">
+            <div><label>Location</label></div>
+            <input type="text" id="inputAccountSettingsLocation">
+        </div>
+
+        <div id="divSummary" class="divLabelInput">
+            <div><label>Summary</label></div>
+            <input type="text" id="inputAccountSettingsSummary">
+        </div>
+
+        <div id="divPassword" class="divLabelInput">
+            <div><label>Password</label></div>
+            <div id="divPasswordLink"><a id="aChangePassword">Change Password</a></div>
+        </div>
+
+
+
+        <div id="divSettingsButtons">
+            <div>
+                <button id="buttonSettingsSave" class="buttonCustom2">Save Changes</button>
+                <button id="buttonSettingsLogout" class="buttonCustom1">Logout</button>
+            </div>
+            <div>
+                <button id="buttonSettingsDisable" class="buttonCustom1">Disable Account</button>
+                <button id="buttonSettingsEnable" class="buttonCustom1">Enable Account</button>
+                <button id="buttonSettingsDelete" class="buttonCustom3">Delete Account</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Loading -->
+    <div id="divLoading" class="center">
+        <img src="res/loading_hourglass2.svg" height="40" width="40" />
+    </div>
+
+
+    <!-- No results message -->
+    <div id="divOfflineMode" class="center">
+        Account Settings not available in offline mode
+    </div>
+</div>
+</script>
+
+        <!-- Other pages -->
+        <script type="text/template" id="templateSearch"><!-- Search page -->
+<div id="divSearchMain">
+
+    <!-- Search results -->
+    <div id="divStoryboards">
+        
+    </div>
+
+
+    <!-- Loading -->
+    <div id="divLoading" class="center">
+        <img class="center" src="res/loading_hourglass2.svg" height=40 width=40  />
+    </div>
+
+
+    <!-- No results message -->
+    <div id="divNoStoryboards" class="center">
+        No Results
+    </div>
+
+
+    <!-- No results message -->
+    <div id="divOfflineMode" class="center">
+        Search not available in offline mode
+    </div>
+
+
+
+
+    <div id="buttonSearchStoryboard" class="divSearchOverlayButton longClickable"
+         title="Show Search Dialog"></div>
+</div>
+</script>
+        <script type="text/template" id="templateEditStoryboard">
+            <!-- Edit Storyboard -->
+<div id="divEditStoryboard" data-storyboard_id="<%- storyboard_id %>">
+
+    <!-- Title -->
+    <div id="divStoryboardTitle">
+        <label id="labelStoryboardTitle"></label>
+    </div>
+
+    <!-- Scenes -->
+    <div id="divScenes"></div>
+
+    <!-- Add scene button-->
+    <div id="divButtonAddScene" class="divAddItemOverlayButton longClickable" title="Add a new Scene"></div>
+    <div id="divButtonEditMode" class="divViewOverlayButton longClickable" title="Edit Mode"></div>
+</div>
+
+
+</script>
+        <script type="text/template" id="templateHelp"><div id="divHelpMain">
+
+    <p>Coming soon</p>
+    
+</div>
+</script>
+
+        <!-- Dialogs -->
+        <script type="text/template" id="templateDialogCreateStoryboard">
+            <!-- Create storyboard dialog -->
+<div id="divDialogCreateStoryboard" class="center">
+
+    <h2>Create Storyboard</h2>
+
+    <div id="divTitle" class="divLabelInput">
+        <div><label>Title</label></div>
+        <input id="inputTitle" type="text" />
+    </div>
+
+    <div id="divCategory" class="divLabelInput">
+        <div><label>Category</label></div>
+        <select id="selectCategory" type="text"></select>
+    </div>
+
+    <div id="divFirstScene" class="divLabelInput">
+        <div><label>First Scene</label></div>
+        <select id="selectFirstScene">
+            <option value="canvastext">Canvas Left, Text Right</option>
+            <option value="textcanvas">Text Left, Canvas Right</option>
+            <option value="text">Text Only</option>
+            <option value="canvas">Canvas Only</option>
+        </select>
+    </div>
+
+
+    <div id="divCheckboxes">
+        <div>
+            <input type="checkbox" id="checkboxPrivate" class="css-checkbox" checked />
+            <label for="checkboxPrivate" class="css-label">Private</label>
+
+            <input type="checkbox" id="checkboxAllowComments" class="css-checkbox" checked />
+            <label for="checkboxAllowComments" class="css-label">Allow Comments</label>
+        </div>
+    </div>
+
+    <div id="divButtons">
+        <button id="buttonDialogOk" class="buttonCustom2">Create</button>
+        <button id="buttonDialogCancel" class="buttonCustom1">Cancel</button>
+    </div>
+
+</div>
+</script>
+        <script type="text/template" id="templateDialogSearch">
+            <!-- Search dialog -->
+<div id="divSearchDialog" class="center">
+
+    <h2>Search</h2>
+
+    <!-- Search Bar -->
+    <div id="divSearchBar">
+        <div id="divIconSearch"></div>
+        <input id="inputSearchTerm" class="inputCustom1" placeholder="Search Everything..." />
+    </div>
+
+
+    <!-- Search Properties -->
+    <div id="divSearchProperties">
+        <div id="divSearchSelects">
+            <table>
+                <tr>
+                    <td><label>Category</label></td>
+                    <td><select id="selectSearchCategory"></select></td>
+                </tr>
+
+                <tr>
+                    <td><label>Sort by</label></td>
+                    <td><select id="selectSearchSortBy"></select></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="divSearchCheckBoxes">
+            <input type="checkbox" id="checkboxSearchTitles"
+                class="css-checkbox" checked />
+            <label for="checkboxSearchTitles" class="css-label">Titles</label>
+
+            <input type="checkbox" id="checkboxSearchUsernames"
+                class="css-checkbox"/>
+            <label for="checkboxSearchUsernames" class="css-label">Usernames</label>
+
+            <input type="checkbox" id="checkboxSearchText"
+                class="css-checkbox" />
+            <label for="checkboxSearchText" class="css-label">Text</label>
+        </div>
+    </div>
+
+
+    <!-- Buttons -->
+    <div id="divButtons">
+        <button id="buttonSearchGo" class="buttonCustom2">Search</button>
+        <button id="buttonSearchCancel" class="buttonCustom1">Cancel</button>
+    </div>
+</div>
+</script>
+        <script type="text/template" id="templateDialogChangePassword">
+            <!-- Change Password -->
+<div id="divChangePasswordDialog" class="center">
+
+    <h3>Change Password</h3>
+
+    <div id="divOldPassword" class="divLabelInput">
+        <div><label>Old Password</label></div>
+        <input type="password" id="inputChangePasswordOld">
+    </div>
+
+    <div id="divNewPassword" class="divLabelInput">
+        <div><label>New Password</label></div>
+        <input type="password" id="inputChangePasswordNew">
+    </div>
+
+    <div id="divConfirmNewPassword" class="divLabelInput">
+        <div><label>Confirm New Password</label></div>
+        <input type="password" id="inputChangePasswordNewConfirmation">
+    </div>
+
+    <div id="divButtons">
+        <button id="buttonChangePassword" class="buttonCustom2">Save</button>
+        <button id="buttonReturn" class="buttonCustom1">Cancel</button>
+    </div>
+</div>
+</script>
+        <script type="text/template" id="templateDialogOkCancel">
+            <!-- Ok Cancel dialog -->
+<div id="divDialogOkCancel" class="center">
+    <h2><%- heading %></h2>
+
+    <p><%- text1 %></p>
+    <p><%- text2 %></p>
+
+    <div id="divButtons">
+        <button id="buttonDialogOk" class="buttonCustom1">Ok</button>
+        <button id="buttonDialogCancel" class="buttonCustom1">Cancel</button>
+    </div> 
+</div>
+</script>
+        <script type="text/template" id="templateDialogAddScene">
+            <!-- Add scene dialog -->
+<div id="divDialogAddScene" class="center">
+
+    <h3>Add Scene</h3>
+
+    <div class="divDialogButtons">
+        <div id="divButtonTextCanvas" class="longClickable" title="Text / Canvas"></div>
+        <div id="divButtonCanvasText" class="longClickable" title="Canvas / Text"></div>
+    </div>
+
+    <div class="divDialogButtons">
+        <div id="divButtonTextOnly" class="longClickable" title="Text Only"></div>
+        <div id="divButtonCanvasOnly" class="longClickable" title="Canvas Only"></div>
+    </div>
+    <button id="buttonDialogCancel" class="buttonCustom1">Cancel</button>
+
+</div>
+</script>
+        <script type="text/template" id="templateDialogEditStoryboardDetails">
+            <!-- Edit storyboard dialog -->
+<div id="divDialogEditStoryboardDetails" class="center">
+
+    <h3>Storyboard Details</h3>
+
+    <div id="divEditStoryboardControls">
+
+        <div id="divTitle" class="divLabelInput">
+            <div><label>Title</label></div>
+            <input id="inputEditStoryboardTitle" type="text">
+        </div>
+
+        <div id="divCategory" class="divLabelInput">
+            <div><label>Category</label></div>
+            <select id="selectEditStoryboardCategory"></select>
+        </div>
+
+        <div id="divCheckboxes">
+            <input type="checkbox" id="checkboxPrivate"
+                class="css-checkbox" checked="checked"/>
+            <label for="checkboxPrivate" class="css-label">Private</label>
+
+            <input type="checkbox" id="checkboxAllowComments"
+                class="css-checkbox" checked="checked"/>
+            <label for="checkboxAllowComments" class="css-label">Allow Comments</label>
+        </div>
+    </div>
+
+    <div id="divButtons">
+        <button id="buttonDialogOk" class="buttonCustom2">Save</button>
+        <button id="buttonDialogCancel" class="buttonCustom1">Cancel</button>
+    </div>
+
+</div>
+</script>
+        <script type="text/template" id="templateDialogStoryboardFullScreen">
+            <!-- Storyboard full screen dialog -->
+<div id="divDialogStoryboardFullScreen">
+
+    <div id="divTitle">
+        <h2 id="divTitle"><%- title %></h2>
+        <div id="divCloseButton" class="longClickable" title="Close full screen"></div>
+        <hr>
+    </div>
+
+    <div id="divContent">
+
+    </div>
+
+    <div id="divBottom">
+        <label id="labelUsername"><%- username %></label>
+
+        <div id="divButtons">
+            <!-- <div id="divButtonShare" class="longClickable" title="Share this Storyboard"></div>
+            <label id="divCommentNumber">1</label>
+            <div id="divButtonComment" class="longClickable" title="Show Comments"></div>
+            <label id="divStarNumber">2</label>
+            <div id="divButtonStar" class="longClickable" title="Star this Storyboard"></div> -->
+        </div>
+
+
+    </div>
+</div>
+</script>
+        <script type="text/template" id="templateDialogEditSceneCanvas">
+            <!-- Edit Scene dialog -->
+<div id="divEditSceneCanvasDialog">
+
+    <!-- Heading div -->
+    <div id="divEditSceneTop">
+        <div id="divCloseButton" class="longClickable" title="Cancel and Close"></div>
+        <label>Canvas</label>
+        <div id="divSaveButton" class="longClickable" title="Save and Close"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="divEditSceneContent">
+        <div id="divCanvas" class="center">
+            <canvas id="canvasMain" tabindex="1"></canvas>
+        </div>
+    </div>
+
+
+    <!-- Bottom div -->
+    <div id="divEditSceneBottom">
+        <div id="divCanvasControls">
+            <input type="text" id="inputSceneColorPicker" />
+            <div class="divCanvasButtonDelete longClickable" title="Delete Selected Object"></div>
+            <div class="divCanvasButtonSelect longClickable" title="Select Mode"></div>
+            <div class="divCanvasButtonSketch longClickable" title="Sketch Mode"></div>
+            <select class="selectPathThickness longClickable" title="Sketch pen thickness">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5" selected="true">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+            <div class="divCanvasButtonText longClickable" title="Add Text"></div>
+            <div class="divCanvasButtonPicture longClickable" title="Add Picture"></div>
+            <div class="divCanvasButtonUndo longClickable" title="Undo last action"></div>
+            <div class="divCanvasButtonRedo longClickable" title="Redo last action"></div>
+            <div class="divCanvasButtonMoveDown longClickable" title="Move Down"></div>
+            <div class="divCanvasButtonMoveUp longClickable" title="Move Up"></div>
+            <div class="divCanvasButtonClear longClickable" title="Clear whole Canvas"></div>
+        </div>
+    </div>
+
+</div>
+
+</script>
+        <script type="text/template" id="templateDialogEditSceneText">
+            <!-- Edit Scene dialog -->
+<div id="divEditSceneTextDialog">
+
+    <!-- Heading div -->
+    <div id="divEditSceneTop">
+        <div id="divCloseButton" class="longClickable" title="Cancel and Close"></div>
+        <label>Text</label>
+        <div id="divSaveButton" class="longClickable" title="Save and Close"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="divEditSceneContent">
+        <div id="divText">
+            <div id="divTextContainer">
+                <div id="divActualText" contenteditable="true" spellcheck="false"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bottom div -->
+    <div id="divEditSceneBottom">
+        <div id="divTextControls">
+            <div id="divEditorTop"></div>
+            <div id="divEditorBottom"></div>
+        </div>
+    </div>
+
+</div>
+
+</script>
+        <script type="text/template" id="templateDialogPhotoCanvas">
+            <div>
+    
+</div>
+</script>
+        <script type="text/template" id="templateDialogAddImage">
+            <!-- Add image to canvas -->
+<div id="divAddImage" class="center">
+
+    <h3>Add Image</h3>
+
+    <div id="divButtons">
+        <button id="buttonFromGallery" class="buttonCustom1">From Gallery</button>
+        <button id="buttonFromUrl" class="buttonCustom1">From URL</button>
+        <button id="buttonRemoveImage" class="buttonCustom1">Remove Image</button>
+        <button id="buttonCancel" class="buttonCustom1">Cancel</button>
+    </div>
+
+    <div id="divFromUrl">
+        <div id="divFromUrlInput" class="divLabelInput">
+            <div><label>URL</label></div>
+            <input type="text" id="inputFromUrl" value="http://imgur.com/FR7H560">
+        </div>
+
+        <div id="divFromUrlButtons">
+            <button id="buttonFromUrlOk" class="buttonCustom1">OK</button>
+            <button id="buttonCancel" class="buttonCustom1">Cancel</button>
+        </div>
+    </div>
+</div>
+</script>
+        <script type="text/template" id="templateDialogEditImage">
+            <!-- Edit image -->
+<div id="divEditImage" class="center">
+
+    <h3>Crop Image</h3>
+
+
+    <div id="divImage">
+        <img id="imgMain" src="<%- imagePath %>" />
+    </div>
+
+
+    <!-- Buttons -->
+    <div id="divButtons">
+        <button id="buttonEditImageCrop" class="buttonCustom1">Crop</button>
+<!--        <button id="buttonEditImageDontCrop" class="buttonCustom1">Don't Crop</button>-->
+    </div>
+
+</div>
+</script>
+
+        <!-- Items -->
+        <script type="text/template" id="templateStoryboardItem">
+            <!-- Storyboard Item -->
+<div class="divStoryboardItem" data-storyboard_id="<%- storyboard_id %>"
+    data-storyboard_offline_id="<%- storyboard_offline_id %>">
+
+    <div class="divDetailsTop">
+        <div class="divTopRow">
+            <div class="divButtonPrivate divButton" title="This Storyboard is Private"></div>
+            <label class="labelUsername"><%- username %></label>
+            <label class="labelSceneNumber"></label>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="divBottomRow">
+            <div class="divLabelTitleContainer">
+                <label class="labelTitle"><%- title %></label>
+            </div>
+
+            <div class="divLabelCategoryContainer">
+                <label class="labelCategory"><%- category %></label>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+    <div class="divInner">
+
+        <div class="divContentArea">
+            <div class="divPicture">
+            </div>
+
+            <div class="divText">
+                <div class="divActualText"></div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="divDetailsBottom">
+        <!-- <div class="divCommentStar">
+            <label class="divCommentNumber">1</label>
+            <div class="divButtonComment divButton longClickable" title="Show Comments"></div>
+            <label class="divStarNumber">2</label>
+            <div class="divButtonStar divButton longClickable" title="Star this Storyboard"></div>
+        </div> -->
+
+        <div class="divBottomButtons">
+            <div class="divButtonDelete divButton longClickable" title="Delete this Storyboard"></div>
+            <!-- <div class="divButtonShare divButton longClickable" title="Share this Storyboard"></div> -->
+            <div class="divButtonEdit divButton longClickable" title="Edit this Storyboard"></div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+</script>
+        <script type="text/template" id="templateStoryboardSceneItem">
+            <!-- Scene Item -->
+<div class="divSceneItem" data-type="<%- sceneType %>" data-index="<%- sceneIndex %>">
+
+    <div class="divSceneContent">
+        <div class="divSceneCanvas">
+        </div>
+
+        <div class="divSeparator"></div>
+
+        <div class="divSceneText">
+            <div class="divActualText"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="divSceneOverlay">
+        <div class="divDetailsTop">
+            <div class="divDetailsTopLabelLeft">
+                <label class="labelDetailsTop">Canvas</label>
+            </div>
+            <div class="divDetailsTopLabelRight">
+                <label class="labelDetailsTop">Text</label>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="divDetailsBottom">
+            <div class="divSceneDelete longClickable divButton" title="Delete this Scene"></div>
+            <div class="divSceneHandleContainer longClickable" title="Drag to rearrange Scenes">
+                <div class="divSceneHandle longClickable divButton"
+                     title="Drag to rearrange Scenes"></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>
+
+</script>
+
+
+
+
+        <!-- -------------------- Scripts --------------------- -->
+        <script src="js/data.js"></script>
+        <script src="js/fileFolder.js"></script>
+        <script src="js/sceneItem.js"></script>
+        <script src="js/server.js"></script>
+        <script src="js/serverOffline.js"></script>
+        <script src="js/storyboardItem.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/utilAndroid.js"></script>
+        <script src="js/utilStoryboard.js"></script>
+        <script src="js/view_accountGallery.js"></script>
+        <script src="js/view_accountSettings.js"></script>
+        <script src="js/view_accountSocial.js"></script>
+        <script src="js/view_accountStoryboards.js"></script>
+        <script src="js/view_dialog.js"></script>
+        <script src="js/view_dialogSceneCanvas.js"></script>
+        <script src="js/view_dialogSceneText.js"></script>
+        <script src="js/view_editImage.js"></script>
+        <script src="js/view_editStoryboard.js"></script>
+        <script src="js/view_help.js"></script>
+        <script src="js/view_loginRegister.js"></script>
+        <script src="js/view_search.js"></script>
+        <script src="js/view_main.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

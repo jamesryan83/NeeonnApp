@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-scanmediafile"
+        version="1.0.0">
+
+    <name>scan media file</name>
+
+    <description>Cordova Device Plugin</description>
+    <license>Apache 2.0</license>
+
+    <keywords>cordova,media,scanner,mediascanner</keywords>
+
+    <js-module src="www/scanmediafile.js" name="scanmediafile">
+        <clobbers target="scanmediafile" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ScanMediaFile">
+                <param name="android-package" value="com.james.neeonn.ScanMediaFile"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ScanMediaFile.java" target-dir="src/com/james/neeonn"/>
+    </platform>
+
+
+</plugin>
